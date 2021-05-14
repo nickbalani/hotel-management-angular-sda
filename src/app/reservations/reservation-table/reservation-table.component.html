@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Reservations</h5>
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Checkin</th>
+        <th scope="col">Checkout</th>
+        <th scope="col">Created At</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of reservations">
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.client.name}}</td>
+        <td>{{item.client.email}}</td>
+        <td>{{item.checkIn}}</td>
+        <td>{{item.checkOut}}</td>
+        <td>{{item.createdAt}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

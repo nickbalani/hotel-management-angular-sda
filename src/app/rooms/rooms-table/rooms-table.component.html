@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Rooms</h5>
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Created At</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of rooms">
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.name}}</td>
+        <td>{{item.createdAt}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
