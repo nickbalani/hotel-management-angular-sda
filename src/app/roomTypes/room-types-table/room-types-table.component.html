@@ -1,6 +1,13 @@
 <div class="card">
   <div class="card-body">
-    <h5 class="card-title">Rooms</h5>
+    <div class="row mb-2">
+      <div class="col-6">
+        <h5 class="card-title">Rooms Types</h5>
+      </div>
+      <div class="col-6 text-end">
+        <a class="btn btn-primary" routerLink="/roomTypes/manage">Add room type</a>
+      </div>
+    </div>
     <table class="table table-bordered">
       <thead>
       <tr>
@@ -14,7 +21,7 @@
       <tr *ngFor="let item of roomTypes">
         <th scope="row">{{item.id}}</th>
         <td>{{item.name}}</td>
-        <td>{{item.photo}}</td>
+        <td><img src="http://localhost:8080/api/files/{{item.photo}}" alt="{{item.photo}}"/></td>
         <td>{{item.createdAt}}</td>
       </tr>
       </tbody>

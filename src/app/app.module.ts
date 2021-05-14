@@ -11,6 +11,8 @@ import { ReservationTableComponent } from './reservations/reservation-table/rese
 import { RoomsTableComponent } from './rooms/rooms-table/rooms-table.component';
 import { RoomTypesTableComponent } from './roomTypes/room-types-table/room-types-table.component';
 import { ReservationFormComponent } from './reservations/reservation-form/reservation-form.component';
+import { RoomsFormComponent } from './rooms/rooms-form/rooms-form.component';
+import { RoomTypeManageComponent } from './roomTypes/room-type-manage/room-type-manage.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ReservationFormComponent } from './reservations/reservation-form/reserv
     ReservationTableComponent,
     RoomsTableComponent,
     RoomTypesTableComponent,
-    ReservationFormComponent
+    ReservationFormComponent,
+    RoomsFormComponent,
+    RoomTypeManageComponent
   ],
   imports: [
     BrowserModule,

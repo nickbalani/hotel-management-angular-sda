@@ -21,6 +21,10 @@ export class RoomService {
     return this.http.get<Room>(`${this.baseUrl}/${id}`);
   }
 
+  save(request: SaveRoomRequest): Observable<number> {
+    return this.http.post<number>(this.baseUrl, request, this.httpHeaders);
+  }
+
   delete(id: number): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
@@ -32,4 +36,10 @@ export interface Room {
   name: string;
   createdAt: Date;
   type: RoomType;
+}
+
+export interface SaveRoomRequest {
+  id: number;
+  name: string;
+  roomTypeId: number;
 }
