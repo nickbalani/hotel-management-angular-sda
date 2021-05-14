@@ -10,6 +10,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { ReservationTableComponent } from './reservations/reservation-table/reservation-table.component';
 import { RoomsTableComponent } from './rooms/rooms-table/rooms-table.component';
 import { RoomTypesTableComponent } from './roomTypes/room-types-table/room-types-table.component';
+import { ReservationFormComponent } from './reservations/reservation-form/reservation-form.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RoomTypesTableComponent } from './roomTypes/room-types-table/room-types
     ClientManageComponent,
     ReservationTableComponent,
     RoomsTableComponent,
-    RoomTypesTableComponent
+    RoomTypesTableComponent,
+    ReservationFormComponent
   ],
   imports: [
     BrowserModule,

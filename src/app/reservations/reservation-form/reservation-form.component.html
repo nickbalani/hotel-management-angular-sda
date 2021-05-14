@@ -1,0 +1,53 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Manage Reservation</h5>
+    <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+      <input type="hidden" formControlName="id" />
+      <div class="mb-3">
+        <label for="name" class="form-label">Client Name</label>
+        <input type="text" class="form-control" id="name" formControlName="clientName"/>
+        <span *ngIf="!reservationForm.get('clientName')?.valid && reservationForm.get('clientName')?.touched"
+              class="text-danger">Please enter a valid name</span>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Client Email</label>
+        <input type="email" class="form-control" id="email" formControlName="clientEmail"/>
+        <span *ngIf="!reservationForm.get('clientEmail')?.valid && reservationForm.get('clientEmail')?.touched"
+              class="text-danger">Please enter a valid email</span>
+      </div>
+
+      <div class="mb-3">
+        <label for="phoneNumber" class="form-label">Client Phone</label>
+        <input type="text" class="form-control" id="phoneNumber" formControlName="clientPhone"/>
+      </div>
+
+      <div class="mb-3">
+        <label for="checkin" class="form-label">Checkin</label>
+        <input type="datetime-local" class="form-control" id="checkin" formControlName="checkIn"/>
+        <span *ngIf="!reservationForm.get('checkin')?.valid && reservationForm.get('checkin')?.touched"
+              class="text-danger">Please enter a valid checkin date</span>
+      </div>
+
+      <div class="mb-3">
+        <label for="checkOut" class="form-label">Checkout</label>
+        <input type="datetime-local" class="form-control" id="checkOut" formControlName="checkOut"/>
+        <span *ngIf="!reservationForm.get('checkOut')?.valid && reservationForm.get('checkOut')?.touched"
+              class="text-danger">Please enter a valid checkout date</span>
+      </div>
+
+      <div class="mb-3">
+        <label for="roomId" class="form-label">Room</label>
+        <select class="form-select" id="roomId" aria-label="Default select example" formControlName="roomId">
+          <option *ngFor="let r of rooms" [value]="r.id">{{r.name}}</option>
+        </select>
+      </div>
+
+      <div>
+        <button [disabled]="!reservationForm.valid" class="btn btn-primary">Save client</button>
+        <a routerLink="/clients" class="btn">Cancel</a>
+      </div>
+
+    </form>
+  </div>
+</div>
